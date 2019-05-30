@@ -8,11 +8,7 @@ import com.crm.qa.base.TestBase;
 public class LoginPage extends TestBase{
 	
 	//Page Factory - Object Rep:
-	@FindBy(name="username")
-	WebElement username;
 	
-	@FindBy(name="password")
-	WebElement password;
 	
 	@FindBy(xpath="//div[@class='input-group-btn']")
 	WebElement loginBtn;
@@ -23,6 +19,12 @@ public class LoginPage extends TestBase{
 	@FindBy(xpath="//img[contains(@class,'img-responsive')]")
 	WebElement crmLogo;
 	
+	@FindBy(name="username")
+	WebElement username;
+	
+	@FindBy(name="password")
+	WebElement password;
+	
 	//Initializing the page objects:
 	public LoginPage(){
 		PageFactory.initElements(driver, this);// 'this' means current class objects. Can also use LoginPage.class		
@@ -30,7 +32,8 @@ public class LoginPage extends TestBase{
 	
 	//Actions:
 	public String validateLoginPageTitle(){
-		return driver.getTitle();//always use string for getTitle		
+		return driver.getTitle();//always use string for getTitle	
+
 	}
 	
 	public boolean validateCRMImage(){

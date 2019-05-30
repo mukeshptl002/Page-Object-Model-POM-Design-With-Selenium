@@ -45,13 +45,13 @@ public class ContactsPageTest extends TestBase{
 	
 	@Test(priority=2)
 	public void selectSingleContactsTest(){
-		contactsPage.selectContactsByName("Adam Willey");
+		contactsPage.selectContactsByName("David Cris");
 	}
 	
 	@Test(priority=3)
 	public void selectMultipleContactsTest(){
-		contactsPage.selectContactsByName("abc xyz");
-		contactsPage.selectContactsByName("Adam Willey");
+		contactsPage.selectContactsByName("Tom Peter");
+		contactsPage.selectContactsByName("David Cris");
 	}
 	
 	@DataProvider // use this for Data driven framework
