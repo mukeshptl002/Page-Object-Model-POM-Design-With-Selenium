@@ -1,5 +1,6 @@
 package com.crm.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +11,7 @@ public class LoginPage extends TestBase{
 	//Page Factory - Object Rep:
 	
 	
-	@FindBy(xpath="//div[@class='input-group-btn']")
+	@FindBy(xpath="//div[@class='input-group-btn']/input")
 	WebElement loginBtn;
 	
 	@FindBy(xpath="//button[@contains(text(),'Sign Up')]")
@@ -47,11 +48,12 @@ public class LoginPage extends TestBase{
 		//loginBtn.click();
 		
 		// METHOD 2 - use .submit()
-		loginBtn.submit();
+		//loginBtn.submit();
 		
 		// METHOD 3 - use javascriptexecutor
-		//JavascriptExecutor js = (JavascriptExecutor)driver; 
-	    //js.executeScript("arguments[0].click();", loginBtn);		
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver; 
+	    js.executeScript("arguments[0].click();", loginBtn);		
 		return new HomePage();// login page lands to homepage, so use return method
 	}
 	
